@@ -1,7 +1,7 @@
 import './app.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
 import Header from './components/header';
+import HomePage from './pages/home-page';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path='/'>
-            <Home />
+            <HomePage />
           </Route>
         </Switch>
       </BrowserRouter>
