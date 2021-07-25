@@ -5,12 +5,8 @@ import Header from './components/header';
 function App() {
   return (
     <>
-      <header>
-        <Header />
-      </header>
-      <main>
-        <Home />
-      </main>
+      <Header />
+      <Home />
     </>
   );
 }
