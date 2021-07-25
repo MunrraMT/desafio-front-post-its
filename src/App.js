@@ -1,7 +1,18 @@
-import './App.scss';
+import './app.scss';
+import Home from './pages/home';
+import Header from './components/header';
 
 function App() {
-  return <h1>ola</h1>;
+  return (
+    <>
+      <header>
+        <Header />
+      </header>
+      <main>
+        <Home />
+      </main>
+    </>
+  );
 }
 
 export default App;
