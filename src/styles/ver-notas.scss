@@ -1,0 +1,13 @@
+.ver-notas {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    color: var(--color-text-roxo);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
