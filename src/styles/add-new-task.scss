@@ -1,0 +1,76 @@
+.add-new-task {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__h2 {
+    color: var(--color-text-roxo);
+    text-align: left;
+    font-family: sans-serif;
+    padding: 1rem;
+  }
+
+  &__form {
+    height: 20rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title,
+  &__text {
+    height: 2.5rem;
+    width: 100%;
+
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: none;
+    background-color: var(--color-backgound-input);
+    box-shadow: 2px 2px 4px var(--color-shadow);
+    font-family: sans-serif;
+    font-size: 0.85rem;
+  }
+
+  &__text {
+    height: 8.5rem;
+    resize: none;
+  }
+
+  &__error {
+    color: red;
+    line-height: 1rem;
+    font-family: sans-serif;
+  }
+
+  &__btn {
+    width: 6rem;
+    line-height: 1rem;
+
+    padding: 0.25rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    cursor: pointer;
+    color: var(--color-text-light);
+    background-color: var(--color-btn-laranja);
+    border-radius: var(--border-radius);
+    border-color: var(--color-btn-laranja);
+
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    justify-content: center;
+
+    &:hover {
+      background-color: var(--color-btn-laranja-dark);
+      border-color: var(--color-btn-laranja-dark);
+    }
+  }
+}
