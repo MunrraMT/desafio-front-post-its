@@ -4,7 +4,8 @@ const BtnAddNotas = () => {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push('/add-notas');
+    history.push('/add-task');
+    history.go(0);
   };
 
   return (
