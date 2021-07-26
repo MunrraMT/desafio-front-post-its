@@ -32,8 +32,10 @@ const AddNewTaskPage = ({ mod }) => {
       .then((response) => showResponseAPI(response))
       .catch(showResponseAPI('error'));
 
-    history.push('/simplified');
-    history.go(0);
+    if (mod === 'simplified') {
+      history.push('/simplified');
+      history.go(0);
+    }
   };
 
   const showError = (message) => (

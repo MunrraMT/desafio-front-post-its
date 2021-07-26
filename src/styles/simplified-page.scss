@@ -7,6 +7,9 @@
   }
 
   .add-new-task__content {
+    max-width: 100%;
+    margin: 0;
+
     padding-bottom: 2rem;
     border-bottom: 2px solid var(--color-btn-laranja);
 
@@ -26,6 +29,8 @@
 
   .show-tasks__content,
   .no-tasks__content {
+    max-width: 100%;
+    margin: 0;
     margin-top: 2rem;
 
     @media screen and (min-width: 900px) {
