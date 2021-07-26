@@ -1,0 +1,43 @@
+.task {
+  &__content {
+    background-color: var(--color-backgound-input);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+
+    position: relative;
+  }
+
+  &__header {
+    color: var(--color-text-cyan);
+    text-transform: capitalize;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-shadow);
+  }
+
+  &__text {
+    color: var(--color-text-dark);
+    padding: 0.5rem 0;
+  }
+
+  &__footer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  &__btn-delete {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    border: none;
+    background-color: var(--color-text-dark);
+    color: var(--color-text-light);
+    font-size: 1rem;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

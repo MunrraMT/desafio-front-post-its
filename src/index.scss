@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+}
+
+:root {
+  --color-text-light: #ffffff;
+  --color-text-dark: #777;
+  --color-text-roxo: #66099c;
+  --color-text-cyan: #22cece;
+  --color-btn-laranja: #d6801e;
+  --color-btn-laranja-dark: #724613;
+  --color-backgound-input: #eee;
+  --color-shadow: #ccc;
+
+  --border-radius: 0.75rem;
+}
