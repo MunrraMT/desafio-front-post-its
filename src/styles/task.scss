@@ -17,6 +17,7 @@
   &__text {
     color: var(--color-text-dark);
     padding: 0.5rem 0;
+    overflow-x: hidden;
   }
 
   &__footer {
