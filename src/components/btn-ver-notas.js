@@ -4,7 +4,7 @@ const BtnVerNotas = () => {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push('/ver-notas');
+    history.push('/view-tasks');
   };
 
   return (
