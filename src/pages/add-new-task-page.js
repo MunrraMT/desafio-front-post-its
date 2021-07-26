@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import BtnAddNotas from '../components/btn-add-notas';
 import BtnVerNotas from '../components/btn-ver-notas';
@@ -8,13 +9,14 @@ import BtnVerNotas from '../components/btn-ver-notas';
 const AddNewTaskPage = () => {
   const [newTask, setNewTask] = useState({});
   const [feedbackPost, setFeedbackPost] = useState('');
+  const history = useHistory();
 
   const ShowModal = () => {
     if (feedbackPost === '') return <aside />;
 
     return (
-      <aside>
-        <h3>{feedbackPost}</h3>
+      <aside className='show-modal__content'>
+        <h3 className='show-modal__title'>{feedbackPost}</h3>
         <BtnVerNotas />
         <BtnAddNotas />
       </aside>
@@ -25,10 +27,7 @@ const AddNewTaskPage = () => {
     if (response === 'error')
       return setFeedbackPost('Nota não criada, sem conexão com o servido');
 
-    if (
-      response.assunto !== newTask.assunto &&
-      response.texto !== newTask.texto
-    ) {
+    if (response.title !== newTask.title && response.text !== newTask.text) {
       return setFeedbackPost('Nota não criada, tente novamente mais tarde');
     }
 
@@ -47,39 +46,63 @@ const AddNewTaskPage = () => {
       .catch(showResponseAPI('error'));
   };
 
-  const showError = (message) => <p>{message}</p>;
+  const showError = (message) => (
+    <p className='add-new-task__error'>{message}</p>
+  );
 
   const sendSchema = Yup.object().shape({
-    assunto: Yup.string()
+    title: Yup.string()
       .min(3, 'Precisa ter no mínino 3 letras!')
       .max(50, 'No máximo 50 caracteres!')
       .required('Precisa ter uma assunto!'),
-    texto: Yup.string()
+    text: Yup.string()
       .min(10, 'Precisa ter no mínino 10 letras!')
       .max(150, 'No máximo 150 caracteres!')
       .required('Precisa ter um texto!')
   });
 
+  const backHome = () => {
+    history.push('/');
+  };
+
   return (
     <>
-      <main>
-        <h2>Bloco de notas</h2>
+      <main className='add-new-task__content'>
+        <h2 className='add-new-task__h2'>Bloco de notas</h2>
         <Formik
           initialValues={{
-            assunto: '',
-            texto: ''
+            title: '',
+            text: ''
           }}
           onSubmit={formSubmit}
           validationSchema={sendSchema}
         >
           {() => (
-            <Form>
-              <Field name='assunto' type='text' placeholder='Assunto.' />
-              <ErrorMessage name='assunto' render={showError} />
-              <Field name='texto' as='textarea' placeholder='Texto.' />
-              <ErrorMessage name='texto' render={showError} />
-              <button className='btn-submit-task' type='submit'>
+            <Form className='add-new-task__form'>
+              <Field
+                className='add-new-task__title'
+                name='title'
+                type='text'
+                placeholder='Assunto.'
+              />
+              <ErrorMessage name='title' render={showError} />
+              <Field
+                className='add-new-task__text'
+                name='text'
+                as='textarea'
+                placeholder='Texto.'
+              />
+              <ErrorMessage name='text' render={showError} />
+              <button className='add-new-task__btn' type='submit'>
                 criar nota
+              </button>
+
+              <button
+                onClick={backHome}
+                className='add-new-task__btn'
+                type='button'
+              >
+                voltar
               </button>
             </Form>
           )}
