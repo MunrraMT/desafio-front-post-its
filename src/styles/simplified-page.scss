@@ -1,0 +1,60 @@
+.simplified-page {
+  display: grid;
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 400px;
+    gap: 3rem;
+  }
+
+  .add-new-task__content {
+    max-width: 100%;
+    margin: 0;
+
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--color-btn-laranja);
+
+    @media screen and (min-width: 900px) {
+      padding-bottom: 0;
+      border: none;
+      padding-right: 2rem;
+      border-right: 2px solid var(--color-btn-laranja);
+
+      grid-column: 1/2;
+      grid-row: 1/-1;
+
+      display: flex;
+      justify-content: stretch;
+    }
+  }
+
+  .show-tasks__content,
+  .no-tasks__content {
+    max-width: 100%;
+    margin: 0;
+    margin-top: 2rem;
+
+    @media screen and (min-width: 900px) {
+      margin-top: 0rem;
+
+      grid-column: 3/-1;
+      grid-row: 1/-1;
+
+      display: flex;
+      justify-content: stretch;
+    }
+  }
+
+  .show-tasks__h2 {
+    @media screen and (min-width: 900px) {
+      margin: 0;
+    }
+  }
+
+  &__footer {
+    padding-top: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

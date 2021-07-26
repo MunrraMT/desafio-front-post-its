@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import BtnAddNotas from '../components/btn-add-notas';
+import BtnBackInit from '../components/btn-back-init';
 import NoExistTasks from '../components/no-exist-tasks';
 
-const ViewerTasksPage = () => {
+const ViewerTasksPage = ({ mod }) => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -50,14 +51,19 @@ const ViewerTasksPage = () => {
 
         <section className='show-tasks__tasks'>{tasksFormated}</section>
 
-        <BtnAddNotas />
+        {mod === 'simplified' ? null : (
+          <>
+            <BtnAddNotas />
+            <BtnBackInit />
+          </>
+        )}
       </main>
     );
   };
 
   const isExistTasks = () => {
     if (tasks.length === 0) {
-      return NoExistTasks();
+      return NoExistTasks(mod);
     }
 
     return ShowTasks(tasks);

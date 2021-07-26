@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import ShowModal from '../components/show-modal';
 
-const AddNewTaskPage = () => {
+const AddNewTaskPage = ({ mod }) => {
   const [newTask, setNewTask] = useState({});
   const [feedbackPost, setFeedbackPost] = useState('');
   const history = useHistory();
@@ -21,16 +21,21 @@ const AddNewTaskPage = () => {
     return setFeedbackPost('Nota criada com sucesso!');
   };
 
-  const formSubmit = (values) => {
+  const formSubmit = async (values) => {
     setNewTask(values);
 
-    fetch('http://localhost:5000/addtask', {
+    await fetch('http://localhost:5000/addtask', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(values)
     })
       .then((response) => showResponseAPI(response))
       .catch(showResponseAPI('error'));
+
+    if (mod === 'simplified') {
+      history.push('/simplified');
+      history.go(0);
+    }
   };
 
   const showError = (message) => (
@@ -84,18 +89,20 @@ const AddNewTaskPage = () => {
                 criar nota
               </button>
 
-              <button
-                onClick={backHome}
-                className='add-new-task__btn'
-                type='button'
-              >
-                voltar
-              </button>
+              {mod === 'simplified' ? null : (
+                <button
+                  onClick={backHome}
+                  className='add-new-task__btn'
+                  type='button'
+                >
+                  voltar
+                </button>
+              )}
             </Form>
           )}
         </Formik>
       </main>
-      <ShowModal feedbackPost={feedbackPost} />
+      {mod === 'simplified' ? null : <ShowModal feedbackPost={feedbackPost} />}
     </>
   );
 };
