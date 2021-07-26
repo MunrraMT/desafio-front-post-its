@@ -22,6 +22,10 @@ function App() {
             <AddNewTaskPage />
           </Route>
 
+          <Route exact path='/simplified'>
+            <AddNewTaskPage />
+          </Route>
+
           <Route exact path='*'>
             <Redirect to='/' />
           </Route>
