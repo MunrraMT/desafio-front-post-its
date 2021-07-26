@@ -1,9 +1,9 @@
 import BtnAddNotas from './btn-add-notas';
 
-const NoExistTasks = () => (
+const NoExistTasks = (mod) => (
   <main className='no-tasks__content'>
     <h3 className='no-tasks__title'>Não existem notas adicionadas</h3>
-    <BtnAddNotas />
+    {mod === 'simplified' ? null : <BtnAddNotas />}
   </main>
 );
 

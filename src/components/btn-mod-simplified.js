@@ -8,12 +8,9 @@ const BtnModSimplified = () => {
   };
 
   return (
-    <>
-      <span className='division' />
-      <button onClick={handleClick} className='home__btn' type='button'>
-        modo simplificado
-      </button>
-    </>
+    <button onClick={handleClick} className='home__btn' type='button'>
+      modo simplificado
+    </button>
   );
 };
 

@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-const BtnBackInit = () => {
+const BtnBackInit = ({ mod }) => {
   const history = useHistory();
 
   const handleClick = () => {
@@ -9,7 +9,7 @@ const BtnBackInit = () => {
 
   return (
     <button onClick={handleClick} className='home__btn' type='button'>
-      Voltar
+      {mod === 'simplified' ? 'Voltar para tela inicial' : 'Voltar'}
     </button>
   );
 };

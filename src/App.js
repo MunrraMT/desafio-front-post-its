@@ -4,6 +4,7 @@ import Header from './components/header';
 import HomePage from './pages/home-page';
 import ViewerTasksPage from './pages/viewer-tasks-page';
 import AddNewTaskPage from './pages/add-new-task-page';
+import SimplifiedPage from './pages/simplified-page';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           </Route>
 
           <Route exact path='/simplified'>
-            <AddNewTaskPage />
+            <SimplifiedPage />
           </Route>
 
           <Route exact path='*'>

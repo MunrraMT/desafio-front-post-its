@@ -6,6 +6,7 @@ const HomePage = () => (
   <main className='home__content'>
     <BtnAddNotas />
     <BtnVerNotas />
+    <section className='division-horizontal' />
     <BtnModSimplified />
   </main>
 );
