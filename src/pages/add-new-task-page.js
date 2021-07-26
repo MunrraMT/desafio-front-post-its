@@ -3,25 +3,12 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-import BtnAddNotas from '../components/btn-add-notas';
-import BtnVerNotas from '../components/btn-ver-notas';
+import ShowModal from '../components/show-modal';
 
 const AddNewTaskPage = () => {
   const [newTask, setNewTask] = useState({});
   const [feedbackPost, setFeedbackPost] = useState('');
   const history = useHistory();
-
-  const ShowModal = () => {
-    if (feedbackPost === '') return <aside />;
-
-    return (
-      <aside className='show-modal__content'>
-        <h3 className='show-modal__title'>{feedbackPost}</h3>
-        <BtnVerNotas />
-        <BtnAddNotas />
-      </aside>
-    );
-  };
 
   const showResponseAPI = (response) => {
     if (response === 'error')
@@ -108,7 +95,7 @@ const AddNewTaskPage = () => {
           )}
         </Formik>
       </main>
-      <ShowModal />
+      <ShowModal feedbackPost={feedbackPost} />
     </>
   );
 };
