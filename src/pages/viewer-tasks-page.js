@@ -9,7 +9,9 @@ const ViewerTasksPage = () => {
     fetch('http://localhost:5000/tasks')
       .then((response) => response.json())
       .then((data) => setTasks(data))
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        throw new Error(e);
+      });
   }, []);
 
   const isExistTasks = () => {
