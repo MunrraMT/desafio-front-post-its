@@ -1,14 +1,17 @@
-import BtnAddNotas from './btn-add-notas';
-import BtnVerNotas from './btn-ver-notas';
+import BtnAddNotas from './btn-add-task';
+import BtnViewTasks from './btn-view-tasks';
 
 const ShowModal = ({ feedbackPost }) => {
-  if (feedbackPost === '') return <aside />;
+  if (feedbackPost === '')
+    return <aside data-testid='show-modal-aside-empty' />;
 
   return (
-    <aside className='show-modal__content'>
-      <section className='show-modal__base'>
-        <h3 className='show-modal__title'>{feedbackPost}</h3>
-        <BtnVerNotas />
+    <aside data-testid='show-modal-aside' className='show-modal__content'>
+      <section data-testid='show-modal-section' className='show-modal__base'>
+        <h3 data-testid='show-modal-title' className='show-modal__title'>
+          {feedbackPost}
+        </h3>
+        <BtnViewTasks />
         <BtnAddNotas />
       </section>
     </aside>

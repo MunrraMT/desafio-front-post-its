@@ -8,7 +8,12 @@ const BtnBackInit = ({ mod }) => {
   };
 
   return (
-    <button onClick={handleClick} className='home__btn' type='button'>
+    <button
+      data-testid='btn-back-init'
+      onClick={handleClick}
+      className='home__btn'
+      type='button'
+    >
       {mod === 'simplified' ? 'Voltar para tela inicial' : 'Voltar'}
     </button>
   );

@@ -70,27 +70,39 @@ const AddNewTaskPage = ({ mod }) => {
           validationSchema={sendSchema}
         >
           {() => (
-            <Form className='add-new-task__form'>
+            <Form
+              data-testid='add-new-task-page-form'
+              className='add-new-task__form'
+            >
               <Field
+                data-testid='add-new-task-page-input-text'
                 className='add-new-task__title'
                 name='title'
                 type='text'
                 placeholder='Assunto.'
+                aria-label='Assunto'
               />
               <ErrorMessage name='title' render={showError} />
               <Field
+                data-testid='add-new-task-page-textarea'
                 className='add-new-task__text'
                 name='text'
                 as='textarea'
                 placeholder='Texto.'
+                aria-label='Corpo do texto'
               />
               <ErrorMessage name='text' render={showError} />
-              <button className='add-new-task__btn' type='submit'>
+              <button
+                data-testid='add-new-task-page-new-task'
+                className='add-new-task__btn'
+                type='submit'
+              >
                 criar nota
               </button>
 
               {mod === 'simplified' ? null : (
                 <button
+                  data-testid='add-new-task-page-voltar'
                   onClick={backHome}
                   className='add-new-task__btn'
                   type='button'

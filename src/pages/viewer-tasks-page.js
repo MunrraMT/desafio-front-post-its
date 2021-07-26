@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import BtnAddNotas from '../components/btn-add-notas';
+import BtnAddTask from '../components/btn-add-task';
 import BtnBackInit from '../components/btn-back-init';
 import NoExistTasks from '../components/no-exist-tasks';
 
@@ -53,7 +53,7 @@ const ViewerTasksPage = ({ mod }) => {
 
         {mod === 'simplified' ? null : (
           <>
-            <BtnAddNotas />
+            <BtnAddTask />
             <BtnBackInit />
           </>
         )}

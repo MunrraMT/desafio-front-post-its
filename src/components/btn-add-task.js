@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-const BtnAddNotas = () => {
+const BtnAddTask = () => {
   const history = useHistory();
 
   const handleClick = () => {
@@ -9,10 +9,15 @@ const BtnAddNotas = () => {
   };
 
   return (
-    <button onClick={handleClick} className='home__btn' type='button'>
+    <button
+      data-testid='btn-new-task'
+      onClick={handleClick}
+      className='home__btn'
+      type='button'
+    >
       nova nota
     </button>
   );
 };
 
-export default BtnAddNotas;
+export default BtnAddTask;
