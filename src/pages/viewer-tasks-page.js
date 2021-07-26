@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react';
 import NoExistTasks from '../components/no-exist-tasks';
+import ShowTasks from '../components/show-tasks';
 
 const ViewerTasksPage = () => {
-  const [task, setTask] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:5000/tasks')
       .then((response) => response.json())
-      .then((data) => setTask(data))
+      .then((data) => setTasks(data))
       .catch((e) => console.log(e));
   }, []);
 
   const isExistTasks = () => {
-    if (task.length === 0) {
+    if (tasks.length === 0) {
       return NoExistTasks();
     }
 
-    return <h2>Suas notas</h2>;
+    return ShowTasks(tasks);
   };
 
   return isExistTasks();
