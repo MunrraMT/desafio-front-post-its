@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Header from './components/header';
 import HomePage from './pages/home-page';
 import ViewerTasksPage from './pages/viewer-tasks-page';
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Header />
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           <Route exact path='/'>
             <HomePage />
@@ -31,7 +31,7 @@ function App() {
             <Redirect to='/' />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
