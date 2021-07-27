@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/desafio-front-post-its/static/css/main.55c5197a.chunk.css",
+    "main.js": "/desafio-front-post-its/static/js/main.d118a085.chunk.js",
+    "main.js.map": "/desafio-front-post-its/static/js/main.d118a085.chunk.js.map",
+    "runtime-main.js": "/desafio-front-post-its/static/js/runtime-main.240bda55.js",
+    "runtime-main.js.map": "/desafio-front-post-its/static/js/runtime-main.240bda55.js.map",
+    "static/js/2.5bbcdf57.chunk.js": "/desafio-front-post-its/static/js/2.5bbcdf57.chunk.js",
+    "static/js/2.5bbcdf57.chunk.js.map": "/desafio-front-post-its/static/js/2.5bbcdf57.chunk.js.map",
+    "static/js/3.cdd21e3c.chunk.js": "/desafio-front-post-its/static/js/3.cdd21e3c.chunk.js",
+    "static/js/3.cdd21e3c.chunk.js.map": "/desafio-front-post-its/static/js/3.cdd21e3c.chunk.js.map",
+    "index.html": "/desafio-front-post-its/index.html",
+    "static/css/main.55c5197a.chunk.css.map": "/desafio-front-post-its/static/css/main.55c5197a.chunk.css.map",
+    "static/js/2.5bbcdf57.chunk.js.LICENSE.txt": "/desafio-front-post-its/static/js/2.5bbcdf57.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.240bda55.js",
+    "static/js/2.5bbcdf57.chunk.js",
+    "static/css/main.55c5197a.chunk.css",
+    "static/js/main.d118a085.chunk.js"
+  ]
+}
